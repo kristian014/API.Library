@@ -3,19 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34408.163
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Host", "API.Library\src\Host\Host.csproj", "{5F0AC18B-DD72-4F4A-9744-9B06A8200A9F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "API.BookLibrary\src\Application\Application.csproj", "{16A3638D-7F33-4760-ACD6-4A5D9FD41378}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "API.Library\src\Application\Application.csproj", "{16A3638D-7F33-4760-ACD6-4A5D9FD41378}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "API.BookLibrary\src\Infrastructure\Infrastructure.csproj", "{77E14633-E6E0-4D24-B70B-F13C3F4F237F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "API.Library\src\Infrastructure\Infrastructure.csproj", "{77E14633-E6E0-4D24-B70B-F13C3F4F237F}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "API.Library\src\Domain\Domain.csproj", "{339A14C2-7F80-4EAC-A560-40DAC5A086F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "API.BookLibrary\src\Domain\Domain.csproj", "{339A14C2-7F80-4EAC-A560-40DAC5A086F5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Migrators.MSSQL", "Migrators.MSSQL\Migrators.MSSQL.csproj", "{935F422C-5014-4253-A8B3-ADC313F403A2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared", "API.Library\src\Shared\Shared.csproj", "{F4355E89-22F5-4302-B673-F7D64645872E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared", "API.BookLibrary\src\Shared\Shared.csproj", "{F4355E89-22F5-4302-B673-F7D64645872E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryAPI.Test", "Test.LibraryAPI\LibraryAPI.Test\LibraryAPI.Test.csproj", "{42094632-BD2B-4FB6-BBDC-2C0AF144EF48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryAPI.Test", "Test.BookLibraryAPI\BookLibraryAPI.Test\LibraryAPI.Test.csproj", "{42094632-BD2B-4FB6-BBDC-2C0AF144EF48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Host", "API.BookLibrary\src\Host\Host.csproj", "{C5F3D49F-BA4C-461E-8769-5BB3850F0AD8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5F0AC18B-DD72-4F4A-9744-9B06A8200A9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5F0AC18B-DD72-4F4A-9744-9B06A8200A9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5F0AC18B-DD72-4F4A-9744-9B06A8200A9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5F0AC18B-DD72-4F4A-9744-9B06A8200A9F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{16A3638D-7F33-4760-ACD6-4A5D9FD41378}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{16A3638D-7F33-4760-ACD6-4A5D9FD41378}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16A3638D-7F33-4760-ACD6-4A5D9FD41378}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -51,6 +47,10 @@ Global
 		{42094632-BD2B-4FB6-BBDC-2C0AF144EF48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42094632-BD2B-4FB6-BBDC-2C0AF144EF48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{42094632-BD2B-4FB6-BBDC-2C0AF144EF48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5F3D49F-BA4C-461E-8769-5BB3850F0AD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5F3D49F-BA4C-461E-8769-5BB3850F0AD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5F3D49F-BA4C-461E-8769-5BB3850F0AD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5F3D49F-BA4C-461E-8769-5BB3850F0AD8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
