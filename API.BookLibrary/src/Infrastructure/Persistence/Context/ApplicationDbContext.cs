@@ -1,0 +1,25 @@
+﻿using Domain.Models.Identity;
+using Infrastructure.Persistence.Configurations;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+
+namespace Infrastructure.Persistence.Context
+{
+    public class ApplicationDbContext : BaseDbContext
+    {
+        public ApplicationDbContext(DbContextOptions options, IOptions<DatabaseSettings> dbSettings) : base(options, dbSettings)
+        {
+        }
+
+        public DbSet<ApplicationUser> ApplicationUsers => Set<ApplicationUser>();
+        public DbSet<ApplicationRole> ApplicationRoles => Set<ApplicationRole>();
+        public DbSet<ApplicationRoleClaim> ApplicationClaims => Set<ApplicationRoleClaim>();
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.HasDefaultSchema(SchemaNames.Catalog);
+        }
+    }
+}

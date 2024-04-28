@@ -1,0 +1,7 @@
+{
+  "DatabaseSettings": {
+    "DBProvider": "mssql",
+    "ConnectionString": "Server=localhost\\sqlexpress;Database=booklibrarylocaldb;Trusted_Connection=True;MultipleActiveResultSets=True;Encrypt=false;"
+
+  }
+}

@@ -18,8 +18,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\API.Library\src\Application\Application.csproj" />
-    <ProjectReference Include="..\..\API.Library\src\Infrastructure\Infrastructure.csproj" />
+    <ProjectReference Include="..\..\API.BookLibrary\src\Application\Application.csproj" />
+    <ProjectReference Include="..\..\API.BookLibrary\src\Infrastructure\Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

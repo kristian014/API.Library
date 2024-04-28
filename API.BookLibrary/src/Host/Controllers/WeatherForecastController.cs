@@ -1,10 +1,10 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Host.Controllers
 {
-    [ApiController]
-    [Route("[controller]")]
-    public class WeatherForecastController : ControllerBase
+    [Authorize]
+    public class WeatherForecastController : BaseApiController
     {
         private static readonly string[] Summaries = new[]
         {

@@ -9,13 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "API.BookL
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "API.BookLibrary\src\Domain\Domain.csproj", "{339A14C2-7F80-4EAC-A560-40DAC5A086F5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Migrators.MSSQL", "Migrators.MSSQL\Migrators.MSSQL.csproj", "{935F422C-5014-4253-A8B3-ADC313F403A2}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared", "API.BookLibrary\src\Shared\Shared.csproj", "{F4355E89-22F5-4302-B673-F7D64645872E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryAPI.Test", "Test.BookLibraryAPI\BookLibraryAPI.Test\LibraryAPI.Test.csproj", "{42094632-BD2B-4FB6-BBDC-2C0AF144EF48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.BookLibraryAPI", "Test.BookLibraryAPI\BookLibraryAPI.Test\Test.BookLibraryAPI.csproj", "{42094632-BD2B-4FB6-BBDC-2C0AF144EF48}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Host", "API.BookLibrary\src\Host\Host.csproj", "{C5F3D49F-BA4C-461E-8769-5BB3850F0AD8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Host", "API.BookLibrary\src\Host\Host.csproj", "{C5F3D49F-BA4C-461E-8769-5BB3850F0AD8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Migrators.MSSQL", "API.BookLibrary\src\Migrators\Migrators.MSSQL\Migrators.MSSQL.csproj", "{C399D428-FE0D-4807-BB94-5AD757EE019E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,6 @@ Global
 		{339A14C2-7F80-4EAC-A560-40DAC5A086F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{339A14C2-7F80-4EAC-A560-40DAC5A086F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{339A14C2-7F80-4EAC-A560-40DAC5A086F5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{935F422C-5014-4253-A8B3-ADC313F403A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{935F422C-5014-4253-A8B3-ADC313F403A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{935F422C-5014-4253-A8B3-ADC313F403A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{935F422C-5014-4253-A8B3-ADC313F403A2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F4355E89-22F5-4302-B673-F7D64645872E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F4355E89-22F5-4302-B673-F7D64645872E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4355E89-22F5-4302-B673-F7D64645872E}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -51,6 +47,10 @@ Global
 		{C5F3D49F-BA4C-461E-8769-5BB3850F0AD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5F3D49F-BA4C-461E-8769-5BB3850F0AD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5F3D49F-BA4C-461E-8769-5BB3850F0AD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C399D428-FE0D-4807-BB94-5AD757EE019E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C399D428-FE0D-4807-BB94-5AD757EE019E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C399D428-FE0D-4807-BB94-5AD757EE019E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C399D428-FE0D-4807-BB94-5AD757EE019E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
