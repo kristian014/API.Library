@@ -4,6 +4,7 @@ namespace Domain.Models
 {
     public class Book : AuditableEntity, IAggregateRoot
     {
+        public new Guid Id { get; set; }
         public string Title { get; private set; } = string.Empty;
 
         public string ISBN { get; private set; } = string.Empty;
