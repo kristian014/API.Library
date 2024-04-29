@@ -20,8 +20,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="BookLibrary\Books\" />
-    <Folder Include="BookLibrary\Rentals\" />
+    <Folder Include="BookLibrary\Rentals\Dtos\" />
+    <Folder Include="BookLibrary\Rentals\Validators\" />
+    <Folder Include="BookLibrary\Rentals\Requests\" />
+    <Folder Include="BookLibrary\Rentals\Specs\" />
     <Folder Include="BookLibrary\Reservations\" />
   </ItemGroup>
 </Project>

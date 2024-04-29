@@ -34,7 +34,7 @@ namespace Domain.Models
 
         public virtual Lookup? CoverType { get; private set; }
 
-        public Book(Guid? createdBy)
+        public Book(Guid? createdBy = null)
         {
             CreatedOn = DateTime.UtcNow;
             LastModifiedOn = DateTime.UtcNow;
@@ -42,15 +42,15 @@ namespace Domain.Models
         }
 
         public Book Update(string? title, string? isbn, string? description, double? price,
-                       Guid? coverTypeId, Guid? genreId, Guid? authorId, Guid? publisherId, Guid? lastModifiedBy, DateTime? publishedDate)
+                       Guid? coverTypeId, Guid? genreId, Guid? authorId, Guid? publisherId, Guid? lastModifiedBy, DateTime? publishedDate, Guid? statusId)
         {
             bool isUpdated = false;
 
             if (title != null && !Title.Equals(title)) { Title = title; isUpdated = true; }
             if (isbn != null && !ISBN.Equals(isbn)) { ISBN = isbn; isUpdated = true; }
-            if (description != null && !Description.Equals(description)) { Description = description; isUpdated = true; }
+            if (description != null && !string.IsNullOrEmpty(description) && !Description?.Equals(description) is not true) { Description = description; isUpdated = true; }
             if (price.HasValue && Price != price.Value) { Price = price.Value; isUpdated = true; }
-
+            if (statusId != null && statusId != Guid.Empty && !StatusId.Equals(statusId)) { StatusId = (Guid)statusId; isUpdated = true; }
             if (coverTypeId.HasValue && CoverTypeId != coverTypeId.Value) { CoverTypeId = coverTypeId.Value; isUpdated = true; }
             if (genreId.HasValue && GenreId != genreId.Value) { GenreId = genreId.Value; isUpdated = true; }
             if (authorId.HasValue && AuthorId != authorId.Value) { AuthorId = authorId.Value; isUpdated = true; }
