@@ -15,6 +15,8 @@ namespace Application.BookLibrary.Reservations.Requests
     {
         public Guid Id { get; set; }
         public Guid BookId { get; set; }
+
+        public DateTime ReservationDate { get; set; }
     }
 
     public class UpdateReservationRequestHandler : IRequestHandler<UpdateReservationRequest, Guid>
@@ -56,8 +58,8 @@ namespace Application.BookLibrary.Reservations.Requests
                     Reservation? reservation = await _repository.GetByIdAsync(request.Id, cancellationToken);
 
                     _ = reservation ?? throw new NotFoundException($"Reservation was not found {request.Id}");
-                    reservation.Update(request.BookId, null, null, userId.ToString(), userId, status.Id);
-                    await _repository.AddAsync(reservation, cancellationToken);
+                    reservation.Update(request.BookId, request.ReservationDate, null, userId.ToString(), userId, status.Id);
+                    await _repository.UpdateAsync(reservation, cancellationToken);
                     return reservation.Id;
                 }
                 else

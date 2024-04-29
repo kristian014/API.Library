@@ -13,7 +13,8 @@ namespace Application.BookLibrary.Reservations.Requests
 {
     public class CreateReservationRequest : IRequest<Guid>
     {
-        public Guid BookId { get; private set; }
+        public Guid BookId { get; set; }
+        public DateTime ReservationDate { get; private set; }
     }
 
     public class CreateReservationRequestHandler : IRequestHandler<CreateReservationRequest, Guid>
@@ -55,7 +56,7 @@ namespace Application.BookLibrary.Reservations.Requests
                     // if a book is reserved and nothing is done, the system should auto cancel that reservation.
                     // Here we are setting a reservation cancellation days to 3
                     Reservation reservation = new Reservation(userId);
-                    reservation.Update(request.BookId, DateTime.Now, DateTime.Now.AddDays(3), userId.ToString(), userId, status.Id);
+                    reservation.Update(request.BookId, request.ReservationDate, request.ReservationDate.AddDays(3), userId.ToString(), userId, status.Id);
                     await _repository.AddAsync(reservation, cancellationToken);
                     return reservation.Id;
                 }

@@ -11,9 +11,10 @@ namespace Application.BookLibrary.Reservations.Validators
         {
             RuleFor(p => p.BookId)
             .NotEmpty()
-            .NotEqual(Guid.Empty)
-             .MustAsync(async (id, ct) => await bookRepo.GetByIdAsync(id, ct) is not null)
-                .WithMessage((_, id) => string.Format("book.notfound", id));
+            .NotEqual(Guid.Empty);
+
+            RuleFor(p => p.ReservationDate)
+            .NotEmpty();
         }
     }
 }

@@ -53,9 +53,7 @@ namespace Application.BookLibrary.Books.Requests
 
             LookupTypeDto? lookupTypeDto = await _lookupTypeRepository.FirstOrDefaultAsync(new LookTypeByNameSpec("Book Status"));
             LookupDto? status = null;
-            CurrentUser? user  = _userContext.GetCurrentUser();
-            _ = user ?? throw new NotFoundException("Current User was not found");
-            Guid userId = ConvertUserIdHelper.GetConvertedUserId(user);
+            Guid userId = ConvertUserIdHelper.GetConvertedUserId(_userContext);
             if (lookupTypeDto != null)
             {
                 List<LookupDto>? lookups = await _lookupRepository.ListAsync(new LookupByTypeIdSpec(lookupTypeDto.Id));

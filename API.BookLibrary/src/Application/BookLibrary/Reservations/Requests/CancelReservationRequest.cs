@@ -55,7 +55,7 @@ namespace Application.BookLibrary.Reservations.Requests
                     _ = reservation ?? throw new NotFoundException($"Reservation was not found {request.Id}");
 
                     reservation.Update(DateTime.Now, userId, status.Id);
-                    await _repository.AddAsync(reservation, cancellationToken);
+                    await _repository.UpdateAsync(reservation, cancellationToken);
                     return reservation.Id;
                 }
                 else
