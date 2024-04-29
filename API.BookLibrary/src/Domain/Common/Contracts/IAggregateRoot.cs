@@ -1,4 +1,4 @@
-﻿namespace Domain.Contracts
+﻿namespace Domain.Common.Contracts
 {
     public interface IAggregateRoot : IEntity
     {

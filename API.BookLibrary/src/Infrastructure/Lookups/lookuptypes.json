@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Genre"
+  },
+  {
+    "name": "Cover Type"
+  },
+  {
+    "name": "Book Status"
+  },
+  {
+    "name": "Reservation Status"
+  }
+]

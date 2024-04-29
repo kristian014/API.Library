@@ -1,5 +1,5 @@
 ﻿using Ardalis.Specification;
-using Domain.Contracts;
+using Domain.Common.Contracts;
 
 namespace Application.Repository
 {

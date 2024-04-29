@@ -1,5 +1,5 @@
 ﻿using Application.Repository;
-using Domain.Contracts;
+using Domain.Common.Contracts;
 using Infrastructure.Common;
 using Infrastructure.Persistence.Context;
 using Infrastructure.Persistence.Init;

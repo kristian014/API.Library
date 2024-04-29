@@ -1,9 +1,9 @@
 ﻿using Ardalis.Specification.EntityFrameworkCore;
 using Ardalis.Specification;
-using Domain.Contracts;
 using Infrastructure.Persistence.Context;
 using Mapster;
 using Application.Repository;
+using Domain.Common.Contracts;
 
 namespace Infrastructure.Persistence.Repository
 {

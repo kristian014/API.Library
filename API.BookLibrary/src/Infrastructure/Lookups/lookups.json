@@ -1,0 +1,94 @@
+[
+  {
+    "lookupType": "Genre",
+    "label": "Fiction"
+  },
+  {
+    "lookupType": "Genre",
+    "label": "Non-Fiction"
+  },
+  {
+    "lookupType": "Genre",
+    "label": "Mystery"
+  },
+  {
+    "lookupType": "Genre",
+    "label": "Fantasy"
+  },
+  {
+    "lookupType": "Genre",
+    "label": "Science Fiction (Sci-Fi)"
+  },
+  {
+    "lookupType": "Genre",
+    "label": "Romance"
+  },
+  {
+    "label": "Horror",
+    "lookupType": "Genre"
+  },
+  {
+    "lookupType": "Genre",
+    "label": "Thriller"
+  },
+  {
+    "lookupType": "Genre",
+    "label": "Historical"
+  },
+  {
+    "lookupType": "Genre",
+    "label": "Action"
+  },
+  {
+    "lookupType": "Genre",
+    "label": "Adventure"
+  },
+  {
+    "lookupType": "Cover Type",
+    "label": "Hardcover "
+  },
+  {
+    "label": "Paperback",
+    "lookupType": "Cover Type"
+  },
+  {
+    "lookupType": "Cover Type",
+    "label": "Ebook"
+  },
+  {
+    "lookupType": "Book Status",
+    "label": "Available "
+  },
+  {
+    "label": "Pending Reservation",
+    "lookupType": "Book Status"
+  },
+  {
+    "label": "Reserved",
+    "lookupType": "Book Status"
+  },
+  {
+    "lookupType": "Reservation Status",
+    "label": "Pending"
+  },
+  {
+    "lookupType": "Reservation Status",
+    "label": "Confirmed"
+  },
+  {
+    "lookupType": "Reservation Status",
+    "label": "On Hold"
+  },
+  {
+    "label": "Checked Out",
+    "lookupType": "Reservation Status"
+  },
+  {
+    "lookupType": "Reservation Status",
+    "label": "Cancelled"
+  },
+  {
+    "lookupType": "Reservation Status",
+    "label": "Expired"
+  }
+]

@@ -18,4 +18,10 @@
     <ProjectReference Include="..\Domain\Domain.csproj" />
     <ProjectReference Include="..\Shared\Shared.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="BookLibrary\Books\" />
+    <Folder Include="BookLibrary\Rentals\" />
+    <Folder Include="BookLibrary\Reservations\" />
+  </ItemGroup>
 </Project>
