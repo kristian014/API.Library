@@ -1,5 +1,8 @@
 ﻿using Application.Common.Exceptions;
+using Application.Common.Interface;
+using Application.Helpers;
 using Application.Repository;
+using Application.User;
 using Domain.Models;
 
 namespace Application.BookLibrary.Books.Requests
@@ -31,19 +34,23 @@ namespace Application.BookLibrary.Books.Requests
     public class UpdateBookRequestHandler : IRequestHandler<UpdateBookRequest, Guid>
     {
         private readonly IRepository<Book> _repository;
+        private readonly IUserContext _userContext;
 
-        public UpdateBookRequestHandler(IRepository<Book> repository)
+        public UpdateBookRequestHandler(IRepository<Book> repository, IUserContext userContext)
         {
             _repository = repository;
+            _userContext = userContext;
         }
 
         public async Task<Guid> Handle(UpdateBookRequest request, CancellationToken cancellationToken)
         {
+            Guid userId = ConvertUserIdHelper.GetConvertedUserId(_userContext);
+
             Book? book = await _repository.GetByIdAsync(request.Id, cancellationToken);
 
             _ = book ?? throw new NotFoundException($"Book was not found {request.Id}");
 
-            book.Update(request.Title, request.ISBN, request.Description, request.Price, request.CoverTypeId, request.GenreId, request.AuthorId, request.PublisherId, null, request.PublishedDate, request.StatusId);
+            book.Update(request.Title, request.ISBN, request.Description, request.Price, request.CoverTypeId, request.GenreId, request.AuthorId, request.PublisherId, userId, request.PublishedDate, request.StatusId);
             await _repository.UpdateAsync(book, cancellationToken);
 
             return book.Id;

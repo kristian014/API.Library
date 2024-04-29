@@ -76,10 +76,6 @@
     "label": "Confirmed"
   },
   {
-    "lookupType": "Reservation Status",
-    "label": "On Hold"
-  },
-  {
     "label": "Checked Out",
     "lookupType": "Reservation Status"
   },

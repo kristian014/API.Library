@@ -48,7 +48,7 @@ try
             }
         });
     });
-
+    builder.Services.AddHttpContextAccessor();
     builder.Host.UseSerilog((_, config) =>
     {
         config.WriteTo.Console()

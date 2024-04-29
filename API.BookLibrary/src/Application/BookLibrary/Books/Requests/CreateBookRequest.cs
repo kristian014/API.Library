@@ -3,7 +3,10 @@ using Application.BookLibrary.Lookups.Dtos.Spec;
 using Application.BookLibrary.LookupTypes.Dto;
 using Application.BookLibrary.LookupTypes.Spec;
 using Application.Common.Exceptions;
+using Application.Common.Interface;
+using Application.Helpers;
 using Application.Repository;
+using Application.User;
 using Domain.Models;
 
 namespace Application.BookLibrary.Books.Requests
@@ -34,21 +37,25 @@ namespace Application.BookLibrary.Books.Requests
         private readonly IRepository<Book> _repository;
         private readonly IRepository<LookupType> _lookupTypeRepository;
         private readonly IRepository<Lookup> _lookupRepository;
+        private readonly IUserContext _userContext;
 
-        public CreateBookRequestHandler(IRepository<Book> repository, IRepository<LookupType> lookupTypeRepository, IRepository<Lookup> lookupRepository)
+        public CreateBookRequestHandler(IRepository<Book> repository, IRepository<LookupType> lookupTypeRepository, IRepository<Lookup> lookupRepository, IUserContext userContext)
         {
             _repository = repository;
             _lookupTypeRepository = lookupTypeRepository;
             _lookupRepository = lookupRepository;
+            _userContext = userContext;
         }
 
         public async Task<Guid> Handle(CreateBookRequest request, CancellationToken cancellationToken)
         {
-            // will add logger soon
+            //TODO: we can add logger in here and change harder statuses into constants
 
             LookupTypeDto? lookupTypeDto = await _lookupTypeRepository.FirstOrDefaultAsync(new LookTypeByNameSpec("Book Status"));
             LookupDto? status = null;
-
+            CurrentUser? user  = _userContext.GetCurrentUser();
+            _ = user ?? throw new NotFoundException("Current User was not found");
+            Guid userId = ConvertUserIdHelper.GetConvertedUserId(user);
             if (lookupTypeDto != null)
             {
                 List<LookupDto>? lookups = await _lookupRepository.ListAsync(new LookupByTypeIdSpec(lookupTypeDto.Id));
@@ -60,7 +67,7 @@ namespace Application.BookLibrary.Books.Requests
 
             if (status is not null)
             {
-                Book book = new Book();
+                Book book = new Book(userId);
                 book.Update(request.Title, request.ISBN, request.Description, request.Price, request.CoverTypeId, request.GenreId, request.AuthorId, request.PublisherId, null, request.PublishedDate, status.Id);
                 await _repository.AddAsync(book, cancellationToken);
                 return book.Id;

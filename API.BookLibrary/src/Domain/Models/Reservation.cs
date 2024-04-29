@@ -39,7 +39,22 @@ namespace Domain.Models
             if (reservationCancellationDate.HasValue && (ReservationCancellationDate != reservationCancellationDate.Value)) { ReservationCancellationDate = reservationCancellationDate.Value; isUpdated = true; }
             if (userId != null &&!string.IsNullOrEmpty(userId) && !UserId.Equals(userId)) { UserId = userId; isUpdated = true; }
 
-            // Only update the last modified details if a change has occurred
+            if (isUpdated && lastModifiedBy.HasValue)
+            {
+                LastModifiedBy = lastModifiedBy.Value;
+                LastModifiedOn = DateTime.UtcNow;
+            }
+
+            return this;
+        }
+
+        public Reservation Update(DateTime? reservationCancellationDate, Guid? lastModifiedBy, Guid? statusId)
+        {
+            bool isUpdated = false;
+
+            if (statusId != null && statusId != Guid.Empty && !StatusId.Equals(statusId)) { StatusId = (Guid)statusId; isUpdated = true; }
+            if (reservationCancellationDate.HasValue && (ReservationCancellationDate != reservationCancellationDate.Value)) { ReservationCancellationDate = reservationCancellationDate.Value; isUpdated = true; }
+
             if (isUpdated && lastModifiedBy.HasValue)
             {
                 LastModifiedBy = lastModifiedBy.Value;
