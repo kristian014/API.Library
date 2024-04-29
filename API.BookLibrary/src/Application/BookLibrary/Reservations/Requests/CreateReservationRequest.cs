@@ -14,7 +14,7 @@ namespace Application.BookLibrary.Reservations.Requests
     public class CreateReservationRequest : IRequest<Guid>
     {
         public Guid BookId { get; set; }
-        public DateTime ReservationDate { get; private set; }
+        public DateTime ReservationDate { get; set; }
     }
 
     public class CreateReservationRequestHandler : IRequestHandler<CreateReservationRequest, Guid>
