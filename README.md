@@ -86,10 +86,8 @@ Update reservation status status
 What Could have gone better 
 Due to time factor as I was baby seating on Saturday, I had only saturday night and sunday to work on this project.  And I believe these are the things that could be gone better if I had time
 
-1) Validating FK before creating a book
+1) Validating FKs before creating a book
 2) A user should be able to rent a book
 3) A user should be able to process a book return
 4) More unit test would have been added covering the infrastructure layer and Application layer
 5) A comphrehensive validation of all requests
-   
-
