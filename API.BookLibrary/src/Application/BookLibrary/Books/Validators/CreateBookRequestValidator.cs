@@ -30,13 +30,11 @@ namespace Application.BookLibrary.Books.Validators
 
             RuleFor(p => p.PublisherId)
               .NotEmpty()
-             .When(p => p.PublisherId.HasValue)
-             .WithMessage((_, publisherId) => $"Publisher not found for ID {publisherId}");
+             .When(p => p.PublisherId.HasValue);
 
             RuleFor(p => p.GenreId)
             .NotEmpty()
-             .When(p => p.GenreId.HasValue)
-             .WithMessage((_, genreId) => $"Genre not found for ID {genreId}");
+             .When(p => p.GenreId.HasValue);
         }
     }
 }
