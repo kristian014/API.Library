@@ -11,9 +11,27 @@ Complete Installation
 Run API
 http://localhost:5062/swagger/index.html
 
+Authentication: You will need to be Authorized to access the Reservation and Book endpoints. This can be done by getting a valid bearer token
+Go to api/identity/login and use this payload to access a bearer token
+{
+  "email": "root@admin.com",
+  "password": "Admin123Pa$$word!",
+}
+or 
+{
+  "email": "root@user.com",
+  "password": "User123Pa$$word!",
+}
+
+Connecting to your local database
+Server name: localhost\SQLEXPRESS
+Click Login
+
+
 Seeder:
 I have seeded some default Cover Types, Genres, Statuses, Publishers and Authors which are needed for creating a Book
 
+Requests:
 Create a Book Payload example -> 
 {
   "title": "string",
@@ -46,21 +64,32 @@ SELECT TOP 1 Id FROM [Catalog].Authors
 PublisherId 
 SELECT TOP 1 Id FROM [Catalog].Publishers
 
-
-Authentication: You will need to be Authorized to access the Reservation and Book endpoints. This can be done by getting a valid bearer token
-Go to api/identity/login and use this payload to access a bearer token
+Create book Reservation Request Payload
 {
-  "email": "root@admin.com",
-  "password": "Admin123Pa$$word!",
-}
-or 
-{
-  "email": "root@user.com",
-  "password": "User123Pa$$word!",
+  "bookId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "reservationDate": "2024-04-29T23:10:17.396Z"
 }
 
-Connecting to your local database
-Server name: localhost\SQLEXPRESS
-Click Login
+Cancel reservation Payload 
+{
+  "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+}
 
+Update reservation status status
+{
+  "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "bookId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "reservationDate": "2024-04-29T23:12:40.544Z"
+}
+
+
+What Could have gone better 
+Due to time factor as I was baby seating on Saturday, I had only saturday night and sunday to work on this project.  And I believe these are the things that could be gone better if I had time
+
+1) Validating FK before creating a book
+2) A user should be able to rent a book
+3) A user should be able to process a book return
+4) More unit test would have been added covering the infrastructure layer and Application layer
+5) A comphrehensive validation of all requests
+   
 
