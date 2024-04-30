@@ -50,6 +50,8 @@ namespace Application.BookLibrary.Books.Requests
         public async Task<Guid> Handle(CreateBookRequest request, CancellationToken cancellationToken)
         {
             //TODO: we can add logger in here and change harder statuses into constants
+            //      Add validation for all FKs to make they all exists before creating a book
+            //      update unit Test
 
             LookupTypeDto? lookupTypeDto = await _lookupTypeRepository.FirstOrDefaultAsync(new LookTypeByNameSpec("Book Status"));
             LookupDto? status = null;

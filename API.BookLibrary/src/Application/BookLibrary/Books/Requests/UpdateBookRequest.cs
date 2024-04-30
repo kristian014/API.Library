@@ -44,6 +44,10 @@ namespace Application.BookLibrary.Books.Requests
 
         public async Task<Guid> Handle(UpdateBookRequest request, CancellationToken cancellationToken)
         {
+            //TODO: we can add logger in here and change harder statuses into constants
+            //      Add validation for all FKs to make they all exists before updating a book
+            //      update unit Test
+
             Guid userId = ConvertUserIdHelper.GetConvertedUserId(_userContext);
 
             Book? book = await _repository.GetByIdAsync(request.Id, cancellationToken);
